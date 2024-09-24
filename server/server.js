@@ -14,7 +14,17 @@ app.get('/api/data', (req, res) => {
         if (err){
             return res.status(500).send('error reading file')
         }
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data)
+    });
+});
 
+app.get('/api/data/big', (req, res) => {
+    const filePath = path.join(__dirname, 'mockbig.json')
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err){
+            return res.status(500).send('error reading file')
+        }
         res.setHeader('Content-Type', 'application/json');
         res.send(data)
     });

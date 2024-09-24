@@ -5,6 +5,7 @@
     <p>Node parent: {{ selectedObj.parent }}</p>
     <button @click="clearObject">X</button>
   </div>
+  <button @click="getBiggerGraph">Get bigger Graph data</button>
   <div class="tree-chart">
     <svg ref="tree"></svg>
   </div>
@@ -15,7 +16,6 @@ import * as d3 from "d3";
 
 const apiRoute = process.env.API_PORT || 3000;
 const host = 'http://localhost';
-// const host = 'http://the-enderchest.synology.me';
 
 export default {
   name: "TreeChart",
@@ -34,12 +34,31 @@ export default {
         .then(response => response.json())
         .then(data => {
           this.chartData = data.data;
-          // this.chartData = data; // node server with more returns
-          this.drawTree();
+          this.reloadTree();
         })
         .catch(error => {
           console.error('Error fetching data:', error);
         });
+    },
+
+    getBiggerGraph() {
+      fetch(`${host}:${apiRoute}/api/data/big`)
+        .then(response => response.json())
+        .then(data => {
+          this.chartData = data.data;
+          this.reloadTree();
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    },
+
+    reloadTree(){
+      this.clearTree();
+      this.drawTree();
+    },
+    clearTree() {
+      d3.select(this.$refs.tree).selectAll("*").remove();
     },
     selectNode(object, event) {
       this.selectedObj = object;
