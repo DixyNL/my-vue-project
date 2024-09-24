@@ -2,21 +2,21 @@ services:
   frontend:
     container_name: vue
     build:
-      context: ./  # Set the context to the assessment folder
-      dockerfile: Dockerfile  # Use the Dockerfile in the assessment folder
+      context: ./
+      dockerfile: Dockerfile
     volumes:
-      - './:/app'   # Mount the assessment directory
-      - /app/node_modules      # Persist node_modules to avoid conflicts
+      - './:/app'
+      - /app/node_modules
     ports:
-      - '8081:8080'            # Map port 8081 on your host to 8080 in the container
+      - '8081:8080'
   
   node:
     container_name: node
     build: 
-      context: ./server  # Set context to the server folder
-      dockerfile: Dockerfile         # Use the Dockerfile in the server folder
+      context: ./server
+      dockerfile: Dockerfile
     volumes:
-      - './server:/usr/app/'  # Mount the server directory
-      - /usr/app/node_modules             # Persist node_modules
+      - './server:/usr/app/'
+      - /usr/app/node_modules 
     ports:
-      - "3000:3000"                      # Map port 3000 on your host to 3000 in the container
+      - "3000:3000"
