@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <TreeChart />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TreeChart from './components/TreeChart.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TreeChart
   }
 }
 </script>
