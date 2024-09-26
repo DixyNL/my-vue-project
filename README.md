@@ -1,24 +1,25 @@
-# my-vue-project
+# Assessment project
 
 ## Project setup
+
+Move into the assessment folder and run :
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+When that is done go into the server folder and run it again: 
 ```
-npm run serve
+npm install
 ```
+Now both Node and Vue should have the node packages installed that are needed for the app.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Compose
 
-### Lints and fixes files
+Make sure you are in the root folder. Then run: 
 ```
-npm run lint
+docker-compose up --build
 ```
+This creates a container for both the Vue `PORT: 8081` and a container for the Node `PORT: 3000`
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Postman logs
+Both api tests are inside the folder "postman collection". These check the incoming data if it contains all the values we need in the application. And checks the data types.
