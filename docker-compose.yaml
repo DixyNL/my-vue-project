@@ -3,10 +3,10 @@ services:
   frontend:
     container_name: vue
     build:
-      context: ./
+      context: ./web
       dockerfile: Dockerfile
     volumes:
-      - './:/app'
+      - './web:/app'
       - /app/node_modules
     ports:
       - '8081:8080'
