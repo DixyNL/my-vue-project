@@ -2,7 +2,7 @@
 
 ## Project setup
 
-Move into the assessment folder and run :
+Move into the web folder for the Vue and run :
 ```
 npm install
 ```
