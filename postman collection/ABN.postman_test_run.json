@@ -1,0 +1,96 @@
+{
+	"id": "52bfaf45-7665-4ccb-a862-55ff8d65a456",
+	"name": "ABN",
+	"timestamp": "2024-09-26T07:24:31.075Z",
+	"collection_id": "23605396-681a6f5c-f15d-49ad-aac3-8295920bf2b5",
+	"folder_id": 0,
+	"environment_id": "23605396-d79d8a08-b6a0-468f-a451-26af0eb2e814",
+	"totalPass": 4,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-09-26T07:24:30.489Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "d6291923-6430-4406-b01d-dc20434f7571",
+			"name": "get data graph",
+			"url": "http://localhost:3000/api/data",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response has data array": true,
+				"Each object has required fields": true
+			},
+			"testPassFailCounts": {
+				"Response has data array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each object has required fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Response has data array": true,
+					"Each object has required fields": true
+				}
+			]
+		},
+		{
+			"id": "0fd02dbe-ca68-4e3b-870a-9415fd5feb78",
+			"name": "get bigger data graph",
+			"url": "http://localhost:3000/api/data/big",
+			"time": 2,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response has data array": true,
+				"Each object has required fields": true
+			},
+			"testPassFailCounts": {
+				"Response has data array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each object has required fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Response has data array": true,
+					"Each object has required fields": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 6,
+	"collection": {
+		"requests": [
+			{
+				"id": "d6291923-6430-4406-b01d-dc20434f7571",
+				"method": "GET"
+			},
+			{
+				"id": "0fd02dbe-ca68-4e3b-870a-9415fd5feb78",
+				"method": "GET"
+			}
+		]
+	}
+}
